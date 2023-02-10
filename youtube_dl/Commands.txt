@@ -1,0 +1,42 @@
+------------------------------------------------------------------------------------------------------------
+LINKS
+------------------------------------------------------------------------------------------------------------
+https://youtube-dl.org/
+https://github.com/ytdl-org/youtube-dl/
+https://ffmpeg.org/download.html#build-windows
+
+------------------------------------------------------------------------------------------------------------
+VIDEO DOWNLOAD
+------------------------------------------------------------------------------------------------------------
+python __main__.py -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' -o "C:\Users\%UserName%\Desktop\%(title)s.%(ext)s" https://www.youtube.com/watch?v=
+python __main__.py -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' --all-subs --write-thumbnail -o "C:\Users\%UserName%\Desktop\%(title)s.%(ext)s" https://www.youtube.com/watch?v=
+
+------------------------------------------------------------------------------------------------------------
+VIDEO PLAYLIST DOWNLOAD
+------------------------------------------------------------------------------------------------------------
+python __main__.py -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]' -o "C:\Users\%UserName%\Desktop\downloaded\%(title)s.%(ext)s" https://www.youtube.com/playlist?list=PLc6 --playlist-start 16 --playlist-end 25
+
+------------------------------------------------------------------------------------------------------------
+AUDIO DOWNLOAD
+------------------------------------------------------------------------------------------------------------
+python __main__.py --extract-audio --audio-quality 320K --audio-format mp3 -o "C:\Users\%UserName%\Desktop\%(title)s.%(ext)s" https://www.youtube.com/watch?v=
+
+------------------------------------------------------------------------------------------------------------
+AUDIO PLAYLIST DOWNLOAD
+------------------------------------------------------------------------------------------------------------
+python __main__.py --extract-audio --audio-quality 320K --audio-format mp3 -o "C:\Users\%UserName%\Desktop\youtube\%(title)s.%(ext)s" https://www.youtube.com/playlist?list=PLf --playlist-start 90 --playlist-end 145
+
+------------------------------------------------------------------------------------------------------------
+CONVERTER
+------------------------------------------------------------------------------------------------------------
+ffmpeg.exe -i input.mp4 -vn -f mp3 -ab 192k output.mp3
+ffmpeg -loop_input -i image.jpg -i sound.mp3 -shortest -b 1000k -acodec copy out.mp4
+ffmpeg -loop_input -i image.jpg -i sound.mp3 -shortest -vcodec libx264 -vpre default -acodec copy out.mp4
+
+
+
+
+
+
+
+
